@@ -1,3 +1,85 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+    height:50px;
+    width: 100%;
+    background-color: #00FFFF;
+}
+
+header ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+header ul a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color:#fff;
+  font-size: 20px;
+}
+
+header li {
+  float: left;
+  width: auto;
+}
+
+h1 {
+    color: #000080;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  text-align: center;
+}
+
+.container{
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    min-height: 100%;
+    background-color:#EEFFFF;
+}
+
+.contents{
+    padding-bottom: 100px;
+    margin-right: auto;
+  　margin-left : auto;
+}
+
+table.table_center{
+   margin-left: auto;
+   margin-right: auto; 
+   text-align:left;
+}
+
+.row{
+  text-align:left;
+}
+
+tr {
+　text-align:left;
+}
+
+td {
+  text-align: left;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #00FFFF;
+    color: #fff;
+    font-size: 1.5rem;
+    display: table;
+}
+
+footer p{
+  vertical-align: middle;
+    display: table-cell;
+}

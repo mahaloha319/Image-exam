@@ -3,12 +3,18 @@
   <head>
     <title>Exercise</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <header>
+  <ul>
+    <li><a href="#">Blog</a></li>
+  </header>
   <body>
     <%= yield %>
   </body>
+  <footer>
+   <p> © 2018 Bootstrap test</p>
+  </footer>  
 </html>

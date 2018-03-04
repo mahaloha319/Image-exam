@@ -1,24 +1,26 @@
-<h1>ブログ一覧</h1>
+<div class="container">
+  <div class="contents">
+    <p><%= notice %></p>
+    <img src="assets/beach.jpg" class="img-circle">
+    <p>このアプリは、ブログを作成していくアプリです。<br>ブログの一覧や編集、削除が可能です。</p>
+    <%= link_to 'ブログを新しく投稿する', new_blog_path %>
+    <h1>ブログ一覧</h1>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">ダウンロード
+      <span class="glyphicon glyphicon-download"></span>
+      </button>
+    </div>
 
-<p><%= notice %></p>
-
-<table>
-  <tr>
-    <td>タイトル</td>
-    <td>内容</td>
-  </tr>    
-
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td> 
-    <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
-    <td><%= link_to 'ブログを編集する', edit_blog_path(blog.id) %></td>
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id),method: :delete, data: {confirm:'本当に削除していいですか？'} %></td>  
-  </tr>
-<% end %>
-</table>
-
-<br>
-
-<%= link_to 'ブログを新しく投稿する', new_blog_path %>
+    <div class="row">
+      <% @blogs.each do |blog| %>
+        <div>
+          <div class="col-xs-12 col-sm-2 col-md-2">タイトル：<%= blog.title %></div>
+          <div class="col-xs-12 col-sm-4 col-md-4">内容：<%= blog.content %></div> 
+          <div class="col-xs-12 col-sm-2 col-md-2"><%= link_to '詳細を確認する', blog_path(blog.id) %></div>
+          <div class="col-xs-12 col-sm-2 col-md-2"><%= link_to 'ブログを編集する', edit_blog_path(blog.id) %></div>
+          <div class="col-xs-12 col-sm-2 col-md-2"><%= link_to 'ブログを削除する', blog_path(blog.id),method: :delete, data: {confirm:'本当に削除していいですか？'} %></div>  
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
