@@ -1,5 +1,8 @@
 .img-circle{
     height: 350px;
+  　width:auto;
+    max-width:100%;
+    max-height:100%;
     margin-top: 20px;
     margin-bottom: 10px
 }
