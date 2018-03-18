@@ -8,13 +8,38 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
-  <ul>
-    <li><a href="#">Blog</a></li>
+    <ul>
+      <li><a href="/">Blog</a></li>
+    </ul>  
   </header>
   <body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+          <span class="sr-only">Blog</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="gnavi" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <% if logged_in? %>
+            <li><%= link_to "ブログ投稿", new_blog_path %></li>
+            <li><%= link_to "ブログ一覧", blogs_path %></li>
+            <li><%= link_to "Log out", session_path(current_user.id), method: :delete %></li>          
+          <% else %>
+            <li><%= link_to "Sign up", new_user_path %></li>
+            <li><%= link_to "Log in", new_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    </nav>  
     <%= yield %>
   </body>
   <footer>
-   <p> © 2018 Bootstrap test</p>
+   <p> © 2018 Login test</p>
   </footer>  
 </html>

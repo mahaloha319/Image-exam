@@ -1,8 +1,41 @@
 .img-circle{
     height: 350px;
+    margin-top: 20px;
+    margin-bottom: 10px
 }
 
 .btn {
     background-color: #6495ED;
     color: #fff;
+}
+
+.navbar-default{
+    background-color: #fff;
+    border-style: none;
+}
+
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+    font-size: 18px;
+    text-align: center;
+    color: #000080;
+    background-color: #fff;
+}
+/* navbar hover,focus時のテキストカラー */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: #003355;
+}
+     
+/* navbar active設定時のカラー */
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #003355;
+}
+
+.navbar-collapse.in{
+    height: 130px;
 }

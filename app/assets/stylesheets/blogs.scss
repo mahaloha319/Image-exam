@@ -1,4 +1,9 @@
-header{
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
     height:50px;
     width: 100%;
     background-color: #00FFFF;
@@ -26,38 +31,38 @@ h1 {
     color: #000080;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
   height: 100%;
   text-align: center;
+  background-color:#EEFFFF;
 }
 
-.container{
+.container {
     position: relative;
     margin: 0 auto;
     height: 100%;
     min-height: 100%;
-    background-color:#EEFFFF;
 }
 
-.contents{
+.contents {
     padding-bottom: 100px;
     margin-right: auto;
   　margin-left : auto;
 }
 
-table.table_center{
+table.table_center {
    margin-left: auto;
    margin-right: auto; 
    text-align:left;
 }
 
-.row{
+.row {
   text-align:left;
+}
+
+.btn{
+    color: #000080;
+    margin-top:30px;
 }
 
 tr {
@@ -68,7 +73,12 @@ td {
   text-align: left;
 }
 
-footer{
+.tablecell{
+  display: table-cell;
+  text-align: left;
+ }
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -79,7 +89,8 @@ footer{
     display: table;
 }
 
-footer p{
-  vertical-align: middle;
+footer p {
+    vertical-align: middle;
     display: table-cell;
+    color: #fff;
 }
