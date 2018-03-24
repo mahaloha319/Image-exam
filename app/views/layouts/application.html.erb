@@ -26,8 +26,10 @@
       <div id="gnavi" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <% if logged_in? %>
+            <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
             <li><%= link_to "ブログ投稿", new_blog_path %></li>
             <li><%= link_to "ブログ一覧", blogs_path %></li>
+            <li><%= link_to "お気に入り", favorite_path(current_user.id) %></li>
             <li><%= link_to "Log out", session_path(current_user.id), method: :delete %></li>          
           <% else %>
             <li><%= link_to "Sign up", new_user_path %></li>
