@@ -91,8 +91,7 @@ Rails.application.configure do
   
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  host = 'website.com'
-  config.action_mailer.default_url_options = { host: host}
+  config.action_mailer.default_url_options = { host: 'heroku-test-app-misa319.c9users.io:8080' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
