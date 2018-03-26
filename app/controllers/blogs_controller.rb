@@ -3,7 +3,8 @@ class BlogsController < ApplicationController
   before_action :request_login, only: [:new, :show, :edit]
   
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:created_at).reverse_order #orderメソッド実行し、created_atの昇順でソートされる.reverse_orderは降順
+
   end
   
   def new
@@ -18,11 +19,15 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id  #現在ログインしているuserのidをblogのuser_idカラムに挿入
       if @blog.save
+        BlogMailer.blog_mail(@blog).deliver
         redirect_to blogs_path, notice: "ブログを作成しました！"
       else
         render 'new'
       end
   end
+  
+  #BlogMailer.blog_mail(@blog).deliver   #投稿内容が保存された時にBlogMailerのblog_mailメソッドを呼び出す
+  #blog_mail(@blog)で、blog_mailメソッドを呼び出す時、引数として@blog(投稿情報)を渡す
   
   def show
     @favorite = current_user.favorites.find_by(blog_id: @blog.id) 
