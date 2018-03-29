@@ -1,7 +1,9 @@
 <h1>ブログ詳細画面</h1>
 <p>タイトル: <%= @blog.title %></p>
 <p>内容: <%= @blog.content %></p>
-
+<p><strong>画像</strong><br>
+<%= image_tag(@blog.image_url) if @blog.image.present? %></p>
+  
 <% unless @blog.user == current_user %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(blog_id: @blog.id), method: :delete, class: 'btn btn-danger' %>

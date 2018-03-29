@@ -22,9 +22,16 @@
     <%= form.label :content %>
   </div>    
   <div class="blog_title">    
-    <%= form.text_field :content %>
+    <%= form.text_area :content, :size => "30x4" %>
   </div>
-  <%= form.submit %>
+  
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :blog_image %> <!-- file_field(オブジェクト名,プロパティ名 [, オプション]) --!>
+    <%= form.hidden_field :image_cache %>　<!--確認画面から新規作成画面に戻った時に情報を保持するための記述--!>
+  </div>
+  
+  <%= form.submit "create my blog", :class=>"btn btn-primary" %>
 <% end %>
-
-<%= link_to "ブログ一覧画面に戻る", blogs_path %>
+<br>
+<%= link_to "Back to Blog list", blogs_path %>
